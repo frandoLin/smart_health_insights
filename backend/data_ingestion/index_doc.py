@@ -2,8 +2,9 @@
 # Description: This script is used to generate embeddings for a list of documents using the SentenceTransformer model.
 
 from load_data import load_documents
+from chunk_doc import DocumentChunker
 import faiss
-from sentence_transformers import SentenceTransformer
+from tqdm import tqdm
 import pickle
 
 def main():
@@ -14,12 +15,16 @@ def main():
     
     print(f"Total documents loaded: {len(documents)}")
     
-    # Initialize the SentenceTransformer model.
-    model = SentenceTransformer('all-MiniLM-L6-v2')
+    chunks = []
+    chunker = DocumentChunker()
+    print("Chunking documents...")
+
+    for doc in tqdm(documents, desc="Chunking documents", unit="doc"):
+        chunks.extend(chunker.chunk(doc, method='overlap', token_limit=True, overlap=50))
     
     # Generate embeddings for each document.
     print("Generating embeddings for documents...")
-    embeddings = model.encode(documents, show_progress_bar=True, convert_to_numpy=True)
+    embeddings = chunker.model.encode(chunks, show_progress_bar=True, convert_to_numpy=True)
     
     # Create a FAISS index using the embeddings.
     dim = embeddings.shape[1]

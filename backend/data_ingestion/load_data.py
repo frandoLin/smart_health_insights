@@ -7,6 +7,11 @@ from nltk.tokenize import sent_tokenize
 import re
 import os
 
+# TODO: Add a function to load the documents from the PDF files.
+# def load_documents_from_pdf():
+#     pass
+
+
 def load_documents(data_dir="./data"):
     """
     Load and split documents from text files in the given directory.
