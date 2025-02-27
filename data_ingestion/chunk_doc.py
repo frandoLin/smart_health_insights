@@ -371,7 +371,7 @@ if __name__ == "__main__":
 
     chunker = DocumentChunker()
     chunking_methods = ["fixed_size", "recursive", "overlap", "sliding_window", "semantic"]
-    token_limit = True
+    token_limit = False
 
     for method in chunking_methods:
         print(f"Using {method} chunking method:\n")
