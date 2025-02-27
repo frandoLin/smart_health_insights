@@ -8,10 +8,10 @@ A Retrieval-Augmented Generation (RAG) system designed to provide accurate healt
 
 The project implements a complete data ingestion pipeline for RAG applications:
 
-1. **Document Loading**: Loads text documents from files and processes them into manageable units
-2. **Document Chunking**: Splits documents into semantically meaningful chunks using various strategies
-3. **Vector Embedding**: Converts text chunks into vector embeddings using the `all-MiniLM-L6-v2` model
-4. **Vector Database**: Creates a FAISS index for efficient similarity search
+- **Document Loading**: Loads text documents from files and processes them into manageable units
+- **Document Chunking**: Splits documents into semantically meaningful chunks using various strategies
+- **Vector Embedding**: Converts text chunks into vector embeddings using the `all-MiniLM-L6-v2` model
+- **Vector Database**: Creates a FAISS index for efficient similarity search
 
 ### Key Components
 
@@ -24,16 +24,17 @@ The project implements a complete data ingestion pipeline for RAG applications:
 The system supports multiple text chunking approaches:
 
 - **Fixed-size chunking**: Divides text into chunks of approximately equal size
-- **Token-based chunking**: Ensures chunks respect token limits of the embedding model
+- **Slide window chunking**: Creates chunks with slide window for better context preservation
 - **Overlapping chunking**: Creates chunks with overlapping content for better context preservation
 - **Semantic chunking**: Groups related content based on semantic similarity
+- **Token-based chunking**: Ensures chunks respect token limits of the embedding model (can be combined with the methods above)
 
 ## Dependencies
-- **sentence-transformers**
-- **faiss-cpu (or faiss-gpu)**
-- **tqdm**
-- **numpy**
-- **pickle**
+- sentence-transformers
+- faiss-cpu (or faiss-gpu)
+- tqdm
+- numpy
+- pickle
 
 ## Getting Started
 
