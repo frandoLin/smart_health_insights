@@ -69,9 +69,9 @@ def main():
     print(f"Minimum number of words in a document: {min_words}")
     print(f"Maximum number of words in a document: {max_words}")
 
-    for doc in documents[0:5]:
-        print(f"Document: {doc}\n")
-        print('-' * 50)
+    # for doc in documents[0:5]:
+    #     print(f"Document: {doc}\n")
+    #     print('-' * 50)
 
 if __name__ == "__main__":
     main()
