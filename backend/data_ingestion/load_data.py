@@ -12,10 +12,20 @@ import os
 #     pass
 
 
-def load_documents(data_dir="./data"):
+def load_documents(data_dir: str = "./data") -> list[str]:
     """
     Load and split documents from text files in the given directory.
     Assumes each document starts with a line like "###<number>".
+    Args:
+        data_dir (str): The directory containing the text files.
+    Returns:
+        list[str]: A list of documents.
+    1. The function first checks if the directory exists.
+    2. It then lists all text files in the directory.
+    3. For each file, it reads the content and splits it into documents.
+    4. Each document is assumed to start with a line like "###<number>".
+    5. The documents are cleaned and stored in a list.
+    6. Finally, the list of documents is returned.  
     """
    
     documents = []
