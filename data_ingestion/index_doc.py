@@ -1,4 +1,4 @@
-# backend/data-ingestion/index_documents.py
+# data-ingestion/index_documents.py
 # Description: This script is used to generate embeddings for a list of documents using the SentenceTransformer model.
 
 from load_data import load_documents
