@@ -1,15 +1,19 @@
 # data-ingestion/index_documents.py
 # Description: This script is used to generate embeddings for a list of documents using the SentenceTransformer model.
+import sys
+import os
 
-from load_data import load_documents
-from chunk_doc import DocumentChunker
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from data_ingestion.load_data import load_documents
+from data_ingestion.chunk_doc import DocumentChunker
 import faiss
 from tqdm import tqdm
 import pickle
 
-def main():
+def index_documents(data_dir: str = "./data", index_file: str = "faiss_index.idx", doc_file: str = "documents.pkl") -> None:
     # Load and split documents from the text files.
-    documents = load_documents()
+    documents = load_documents(data_dir)
     if not documents:
         raise ValueError("No documents found. Please check your dataset files.")
     
@@ -34,11 +38,11 @@ def main():
     
     # Save the FAISS index and the list of documents.
     print("Saving FAISS index and document metadata...")
-    faiss.write_index(index, "faiss_index.idx")
-    with open("documents.pkl", "wb") as f:
-        pickle.dump(documents, f)
+    faiss.write_index(index, index_file)
+    with open(doc_file, "wb") as f:
+        pickle.dump(chunks, f)
     
-    print(f"Successfully indexed {len(documents)} documents!")
+    print(f"Successfully indexed {len(chunks)} documents!")
 
 if __name__ == "__main__":
-    main()
+    index_documents()

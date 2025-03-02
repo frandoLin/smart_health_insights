@@ -2,7 +2,7 @@
 # The text is a string containing multiple documents. Each document is separated by a newline character.
 # The script uses the sent_tokenize function from the nltk.tokenize module to split the text into sentences.
 import nltk
-nltk.download('punkt_tab')
+nltk.download('punkt_tab', quiet=True)
 from nltk.tokenize import sent_tokenize
 import re
 import os
@@ -12,7 +12,7 @@ import os
 #     pass
 
 
-def load_documents(data_dir: str = "./data") -> list[str]:
+def load_documents(data_dir: str) -> list[str]:
     """
     Load and split documents from text files in the given directory.
     Assumes each document starts with a line like "###<number>".
