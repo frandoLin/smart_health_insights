@@ -52,7 +52,7 @@ The system supports multiple text chunking approaches:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR-USERNAME/smart-health-insights.git
+git clone https://github.com/frandoLin/smart-health-insights.git
 cd smart-health-insights
 
 python main.py
