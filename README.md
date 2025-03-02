@@ -4,6 +4,17 @@ A Retrieval-Augmented Generation (RAG) system designed to provide accurate healt
 
 ## Current Implementation
 
+### Dataset
+
+This project uses the **PubMed 20k RCT** dataset, which includes:
+- 20,000 medical research abstracts of randomized controlled trials
+- Sourced from the PubMed database of biomedical literature
+- Rich content covering various medical conditions, treatments, and clinical outcomes
+- Structured abstracts with sections (background, methods, results, conclusions)
+
+The dataset provides high-quality, scientific medical information that serves as the knowledge base for this RAG system.
+
+
 ### Data Processing Pipeline
 
 The project implements a complete data ingestion pipeline for RAG applications:
@@ -18,6 +29,7 @@ The project implements a complete data ingestion pipeline for RAG applications:
 - `load_data.py`: Loads and pre-processes documents from text files
 - `chunk_doc.py`: Implements the `DocumentChunker` class with multiple chunking strategies
 - `index_doc.py`: Creates vector embeddings and builds the FAISS index
+- `utils.py`: Provides core RAG functionality including hybrid retrieval (vector + BM25), reranking, and LLM chain creation
 
 ### Chunking Strategies
 
@@ -43,7 +55,7 @@ The system supports multiple text chunking approaches:
 git clone https://github.com/YOUR-USERNAME/smart-health-insights.git
 cd smart-health-insights
 
-python data_ingestion/index_doc.py
+python main.py
 ```
 
 ## TODO List
