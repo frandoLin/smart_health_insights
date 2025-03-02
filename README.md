@@ -60,8 +60,8 @@ python main.py
 
 ## TODO List
 ### Short-term Improvements
-- **Query Interface**: Implement a query mechanism to search the FAISS index
-- **LLM Integration**: Connect with an LLM to generate responses based on retrieved contexts
+- ~~**Query Interface**: Implement a query mechanism to search the FAISS index~~
+- ~~**LLM Integration**: Connect with an LLM to generate responses based on retrieved contexts~~
 - **Evaluation**: Add metrics to evaluate retrieval performance and answer quality
 - **Add Requirements File**: Create a requirements.txt with all dependencies
 ### Medium-term Goals
