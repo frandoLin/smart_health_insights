@@ -55,6 +55,8 @@ The system supports multiple text chunking approaches:
 git clone https://github.com/frandoLin/smart-health-insights.git
 cd smart-health-insights
 
+pip install -r requirements.txt
+
 python main.py
 ```
 
