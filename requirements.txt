@@ -3,6 +3,8 @@ langchain-core == 0.3.40
 langchain-ollama == 0.2.3
 sentence-transformers == 3.4.1
 faiss-cpu == 1.10.0
+fastapi == 0.115.8
+uvicorn == 0.34.0
 rank-bm25 
 nltk == 3.9.1
 pytest

@@ -41,12 +41,16 @@ The system supports multiple text chunking approaches:
 - **Semantic chunking**: Groups related content based on semantic similarity
 - **Token-based chunking**: Ensures chunks respect token limits of the embedding model (can be combined with the methods above)
 
+
 ## Dependencies
-- sentence-transformers
-- faiss-cpu (or faiss-gpu)
-- tqdm
-- numpy
-- pickle
+- Linux ubuntu 20.04
+- Python 3.10
+- node v18.20.7
+- npm 10.8.2
+- React 18.3.1
+- Vite 5.4.14
+- Axios 1.8.1
+
 
 ## Getting Started
 
