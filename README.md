@@ -90,7 +90,7 @@ npm install  # First time only
 npm run dev
 
 ```
-
+![React Interface Screenshot](images/react_interface.png)
 
 ## TODO List
 ### Short-term Improvements
