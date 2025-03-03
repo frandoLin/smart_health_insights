@@ -58,6 +58,40 @@ cd smart-health-insights
 python main.py
 ```
 
+## Web Interface Options
+
+The project provides two options for a web-based interface to interact with the RAG system:
+
+### Option 1: Streamlit Interface (Recommended)
+
+A simple, Python-based interface with chat history and advanced query options:
+
+```bash
+# Install Streamlit
+pip install streamlit
+
+# Run the Streamlit app
+streamlit run app.py --server.address 0.0.0.0
+```
+![Streamlit Interface Screenshot](images/streamlit_interface.png)
+
+### Option 2: React Frontend with FastAPI Backend
+
+A more customizable web interface with separate frontend and backend:
+
+```bash
+# Start the FastAPI backend
+cd smart-health-insights
+python api.py
+
+# In a separate terminal, start the React frontend
+cd smart-health-insights/react
+npm install  # First time only
+npm run dev
+
+```
+
+
 ## TODO List
 ### Short-term Improvements
 - ~~**Query Interface**: Implement a query mechanism to search the FAISS index~~
