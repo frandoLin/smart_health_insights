@@ -103,7 +103,7 @@ npm run dev
 - ~~**Query Interface**: Implement a query mechanism to search the FAISS index~~
 - ~~**LLM Integration**: Connect with an LLM to generate responses based on retrieved contexts~~
 - **Evaluation**: Add metrics to evaluate retrieval performance and answer quality
-- **Add Requirements File**: Create a requirements.txt with all dependencies
+- ~~**Add Requirements File**: Create a requirements.txt with all dependencies~~
 ### Medium-term Goals
 - ~~**Web Interface**: Develop a simple UI for interacting with the system~~
 - **Document Sources**: Add support for more document formats (PDF, HTML, etc.)
