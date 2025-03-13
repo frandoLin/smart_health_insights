@@ -43,6 +43,7 @@ The system supports multiple text chunking approaches:
 
 
 ## Dependencies
+- RTX 3090 GPU 24G
 - Linux ubuntu 20.04
 - Python 3.10
 - node v18.20.7
