@@ -21,7 +21,11 @@ if "messages" not in st.session_state:
 @st.cache_resource
 def load_models():
     model_embedding = "all-MiniLM-L6-v2"
-    model = ChatOllama(model="llama3.1:8b")
+    # Using localhost works both locally and in Docker with host network mode
+    model = ChatOllama(
+        model="llama3.1:8b",
+        host="http://localhost:11434"
+    )
     chain = create_inference_chain(model)
     return model_embedding, model, chain
 
@@ -38,9 +42,9 @@ query = st.chat_input("Ask a medical question...")
 # Sidebar options
 with st.sidebar:
     st.header("Settings")
-    show_context = st.checkbox("Show source context", value=False)
-    top_k = st.slider("Number of documents to retrieve", min_value=1, max_value=10, value=5)
-    use_reranker = st.checkbox("Use reranking", value=True)
+    show_context = st.checkbox("Show source context", value=True)
+    top_k = st.slider("Number of documents to retrieve", min_value=1, max_value=5, value=5)
+    use_reranker = st.checkbox("Use reranking", value=False)
     
     if st.button("Clear conversation"):
         st.session_state.messages = []

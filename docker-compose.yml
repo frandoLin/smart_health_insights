@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  smart-health-insights:
+    build: .
+    image: smart-health-insights:v0.2
+    network_mode: host
+    volumes:
+      - .:/app
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_FILE_WATCHER_TYPE=none

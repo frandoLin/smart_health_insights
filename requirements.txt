@@ -10,3 +10,5 @@ nltk == 3.9.1
 pytest
 tqdm
 numpy == 1.26.4
+streamlit
+# Add other dependencies here
